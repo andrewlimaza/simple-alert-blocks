@@ -18,6 +18,8 @@ const {
 // Available alert types for a dropdown setting.
 const all_types = [
 	{ value: 'primary', label: 'Primary' },
+	{ value: 'secondary', label: 'Secondary' },
+	{ value: 'success', label: 'Success' },
 	{ value: 'warning', label: 'Warning' },
 	{ value: 'danger', label: 'Danger' },
 	{ value: 'info', label: 'Info' },
@@ -54,7 +56,7 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
     			<InspectorControls>
     				<PanelBody>
     					<SelectControl
-    						label = __( 'Please select the type of alert you want to display.', 'simple-bootstrap-alerts-for-gutenberg' )
+    						label = 'Please select the type of alert you want to display.'
     						options = { all_types } 
   							value = { alert_type }
   							onChange = { alert_type => { setAttributes( { alert_type } ) } }
@@ -66,7 +68,7 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 	   					className = "content"
 	   					value = { content }
 	   					onChange = { content => { setAttributes( { content } ) } }
-	   					placeholder = __( 'Add text...', 'simple-bootstrap-alerts-for-gutenberg' )
+	   					placeholder = 'Add text...'
 	   				/>
 	   			</div>
     		]);

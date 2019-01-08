@@ -2,7 +2,7 @@
   "name": "simple-bootstrap-alerts-for-gutenberg",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "main": "js/gutenberg.js",
+  "main": "block.js",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
