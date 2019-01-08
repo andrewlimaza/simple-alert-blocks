@@ -43,9 +43,7 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 				default: 'primary'
 			},
 			content: {
-				type: 'array',
-				source: 'children',
-				selector: 'p'
+				type: 'string',
 			}
 		},
 
@@ -64,20 +62,24 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
     				</PanelBody>
     			</InspectorControls>,
 	   			<div className = { "alert alert-" + alert_type }>
-	   				<RichText 
+	   			<RichText 
+	   					tagName = "p"
 	   					className = "content"
 	   					value = { content }
-	   					onChange = { content => { setAttributes( { content } ) } }
+	   					onChange = { ( content ) => setAttributes( { content } ) }
 	   					placeholder = 'Add text...'
+	   					format="string"
 	   				/>
-	   			</div>
+	   				</div>
     		]);
         },
 
         save: props => {
         	const { attributes: { alert_type, content } } = props;
        		return (
-       			<div className={ "alert alert-" + alert_type }>{ content }</div>
+       			<div className={ "alert alert-" + alert_type }>
+       			<RichText.Content tagname="p" value={content} />
+	   			</div>
        		);
         },
 	}

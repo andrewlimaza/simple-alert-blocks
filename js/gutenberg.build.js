@@ -97,9 +97,7 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 			default: 'primary'
 		},
 		content: {
-			type: 'array',
-			source: 'children',
-			selector: 'p'
+			type: 'string'
 		}
 	},
 
@@ -129,12 +127,14 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 			'div',
 			{ className: "alert alert-" + alert_type },
 			wp.element.createElement(RichText, {
+				tagName: 'p',
 				className: 'content',
 				value: content,
 				onChange: function onChange(content) {
-					setAttributes({ content: content });
+					return setAttributes({ content: content });
 				},
-				placeholder: 'Add text...'
+				placeholder: 'Add text...',
+				format: 'string'
 			})
 		)];
 	},
@@ -147,7 +147,7 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 		return wp.element.createElement(
 			'div',
 			{ className: "alert alert-" + alert_type },
-			content
+			wp.element.createElement(RichText.Content, { tagname: 'p', value: content })
 		);
 	}
 });
