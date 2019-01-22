@@ -2,7 +2,6 @@
 /**
  * Plugin Name: Simple Alerts For Gutenberg
  * Description: Gutenberg block for simple alert boxes.
- * Plugin URI: https://andrewlima.co.za
  * Author: Andrew Lima
  * Author URI: https://andrewlima.co.za
  * Version: 1.0
