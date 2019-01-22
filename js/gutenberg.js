@@ -29,9 +29,9 @@ const all_types = [
 
 ];
 
-registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
-		title: __( 'Alert Box', 'simple-bootstrap-alerts-for-gutenberg'  ),
-		description: __( 'A simple block for Bootstrap alert boxes', 'simple-bootstrap-alerts-for-gutenberg' ),
+registerBlockType ( 'simple-alerts-for-gutenberg/alert-boxes', {
+		title: __( 'Alert Box', 'simple-alerts-for-gutenberg'  ),
+		description: __( 'A simple block for alert boxes', 'simple-alerts-for-gutenberg' ),
 		category: 'layout',
 		icon: {
 			src: 'smiley',

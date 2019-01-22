@@ -1,7 +1,7 @@
 //Jquery to hide junk, not working in REACT for some reason
 jQuery(document).ready(function(){
 	jQuery( 'button.close' ).on( 'click', function() { 
-    	jQuery(this).closest('.wp-block-simple-bootstrap-alerts-for-gutenberg-alert-boxes').fadeOut('slow');
+    	jQuery(this).closest('.wp-block-simple-alerts-for-gutenberg-alert-boxes').fadeOut('slow');
 	});
 });
 

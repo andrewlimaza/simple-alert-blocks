@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Simple Alert Boxes For Gutenberg
- * Description: Gutenberg block for Bootstrap alert boxes. Works without Bootstrap enqueued.
+ * Plugin Name: Simple Alerts For Gutenberg
+ * Description: Gutenberg block for simple alert boxes.
  * Plugin URI: https://andrewlima.co.za
  * Author: Andrew Lima
  * Author URI: https://andrewlima.co.za
@@ -12,45 +12,45 @@
  * Network: false
  *
  *
- * Simple Alerts For Gutenberg is free software: you can redistribute it and/or modify
+ * Simple Alerts For Gutenberg For Gutenberg is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * Simple Alerts For Gutenberg is distributed in the hope that it will be useful,
+ * Simple Alerts For Gutenberg For Gutenberg is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Simple Bootstrap Alerts For Gutenberg. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
+ * along with Simple Alerts For Gutenberg For Gutenberg. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
 defined( 'ABSPATH' ) || exit;
 
-function sbafg_register_files_for_gutenberg() {
+function safgb_register_files_for_gutenberg() {
     wp_register_script(
-        'sbafg-gutenberg-js',
+        'safgb-gutenberg-js',
         plugins_url( 'js/gutenberg.build.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element', 'wp-editor' )
     );
 
   wp_register_script(
-    'sbafg-hide-alert-js',
+    'safgb-hide-alert-js',
     plugins_url( 'js/hide-alert.js', __FILE__ )
   );
 
     wp_register_style(
-      'sbafg-gutenberg-css',
+      'safgb-gutenberg-css',
       plugins_url( 'css/bootstrap-alerts.css', __FILE__ ),
       array(),
       filemtime( plugin_dir_path( __FILE__ ) . 'css/bootstrap-alerts.css' )
     );
 
-    register_block_type( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', array(
-        'editor_script' => 'sbafg-gutenberg-js',
-        'style' => 'sbafg-gutenberg-css',
-        'script' => 'sbafg-hide-alert-js'
+    register_block_type( 'simple-alerts-for-gutenberg/alert-boxes', array(
+        'editor_script' => 'safgb-gutenberg-js',
+        'style' => 'safgb-gutenberg-css',
+        'script' => 'safgb-hide-alert-js'
     ) );
 }
-add_action( 'init', 'sbafg_register_files_for_gutenberg' );
+add_action( 'init', 'safgb_register_files_for_gutenberg' );
