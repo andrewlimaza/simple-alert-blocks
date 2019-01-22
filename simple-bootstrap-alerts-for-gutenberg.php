@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Simple Bootstrap Alerts For Gutenberg
+ * Plugin Name: Simple Alert Boxes For Gutenberg
  * Description: Gutenberg block for Bootstrap alert boxes. Works without Bootstrap enqueued.
  * Plugin URI: https://andrewlima.co.za
  * Author: Andrew Lima
@@ -12,12 +12,12 @@
  * Network: false
  *
  *
- * Simple Bootstrap Alerts For Gutenberg is free software: you can redistribute it and/or modify
+ * Simple Alerts For Gutenberg is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * Simple Bootstrap Alerts For Gutenberg is distributed in the hope that it will be useful,
+ * Simple Alerts For Gutenberg is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
