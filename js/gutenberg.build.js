@@ -73,7 +73,8 @@ var _wp$i18n = wp.i18n,
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$components = wp.components,
     SelectControl = _wp$components.SelectControl,
-    PanelBody = _wp$components.PanelBody;
+    PanelBody = _wp$components.PanelBody,
+    CheckboxControl = _wp$components.CheckboxControl;
 var _wp$editor = wp.editor,
     InspectorControls = _wp$editor.InspectorControls,
     RichText = _wp$editor.RichText;
@@ -91,6 +92,7 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 		background: '#cce5ff',
 		foreground: '#004085'
 	},
+
 	attributes: {
 		alert_type: {
 			type: 'string',
@@ -98,6 +100,10 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 		},
 		content: {
 			type: 'string'
+		},
+		dismiss: {
+			type: 'Boolean',
+			default: true
 		}
 	},
 
@@ -105,8 +111,8 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 		var _props$attributes = props.attributes,
 		    alert_type = _props$attributes.alert_type,
 		    content = _props$attributes.content,
+		    dismiss = _props$attributes.dismiss,
 		    setAttributes = props.setAttributes;
-
 
 		return [wp.element.createElement(
 			InspectorControls,
@@ -122,10 +128,19 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 						setAttributes({ alert_type: alert_type });
 					}
 				})
-			)
+			),
+			wp.element.createElement(CheckboxControl, {
+				heading: 'Please select if the notice should be dismissible.',
+				label: 'Dismissible notice?',
+				help: 'Show an \'x\' and allow users to close this alert.',
+				checked: dismiss,
+				onChange: function onChange(dismiss) {
+					setAttributes({ dismiss: dismiss });
+				}
+			})
 		), wp.element.createElement(
 			'div',
-			{ className: "alert alert-" + alert_type },
+			{ className: "alert alert-" + alert_type, role: 'alert' },
 			wp.element.createElement(RichText, {
 				tagName: 'p',
 				className: 'content',
@@ -135,19 +150,33 @@ registerBlockType('simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 				},
 				placeholder: 'Add text...',
 				format: 'string'
-			})
+			}),
+			dismiss === true ? wp.element.createElement(
+				'span',
+				{ className: 'close', 'aria-hidden': 'true' },
+				'\xD7'
+			) : null
 		)];
 	},
-
 	save: function save(props) {
 		var _props$attributes2 = props.attributes,
 		    alert_type = _props$attributes2.alert_type,
-		    content = _props$attributes2.content;
+		    content = _props$attributes2.content,
+		    dismiss = _props$attributes2.dismiss;
 
 		return wp.element.createElement(
 			'div',
-			{ className: "alert alert-" + alert_type },
-			wp.element.createElement(RichText.Content, { tagname: 'p', value: content })
+			{ className: "alert alert-" + alert_type, role: 'alert' },
+			wp.element.createElement(RichText.Content, { tagname: 'p', value: content }),
+			dismiss === true ? wp.element.createElement(
+				'button',
+				{ type: 'button', className: 'close', 'data-dismiss': 'alert', 'aria-label': 'Close' },
+				wp.element.createElement(
+					'span',
+					{ 'aria-hidden': 'true' },
+					'\xD7'
+				)
+			) : null
 		);
 	}
 });

@@ -14,6 +14,17 @@
   font-weight: 700;
 }
 
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
 
 .alert-primary {
   color: #004085;
@@ -126,3 +137,40 @@
 .alert-dark .alert-link {
   color: #040505;
 }
+
+span.close{
+  margin-top:-30px !important;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  background:none;
+}
+
+.close:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+button.close:hover, 
+button.close:active {
+  color:inherit;
+  background:none;
+}
+

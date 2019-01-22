@@ -35,6 +35,11 @@ function sbafg_register_files_for_gutenberg() {
         array( 'wp-blocks', 'wp-element', 'wp-editor' )
     );
 
+  wp_register_script(
+    'sbafg-hide-alert-js',
+    plugins_url( 'js/hide-alert.js', __FILE__ )
+  );
+
     wp_register_style(
       'sbafg-gutenberg-css',
       plugins_url( 'css/bootstrap-alerts.css', __FILE__ ),
@@ -44,7 +49,8 @@ function sbafg_register_files_for_gutenberg() {
 
     register_block_type( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', array(
         'editor_script' => 'sbafg-gutenberg-js',
-        'style' => 'sbafg-gutenberg-css'
+        'style' => 'sbafg-gutenberg-css',
+        'script' => 'sbafg-hide-alert-js'
     ) );
 }
 add_action( 'init', 'sbafg_register_files_for_gutenberg' );

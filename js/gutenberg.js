@@ -8,6 +8,7 @@ const {
 const {
 	SelectControl,
 	PanelBody,
+	CheckboxControl
 } = wp.components;
 
 const { 
@@ -37,6 +38,7 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 			background: '#cce5ff',
 			foreground: '#004085',
 		},
+		
 		attributes: {
 			alert_type: {
 				type: 'string',
@@ -44,12 +46,15 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 			},
 			content: {
 				type: 'string',
-			}
+			},
+			dismiss: {
+				type: 'Boolean',
+				default: true
+			},
 		},
 
         edit: props => {
-        	const { attributes: { alert_type, content }, setAttributes } = props;
-
+        	const { attributes: { alert_type, content, dismiss }, setAttributes } = props;
     		return ([
     			<InspectorControls>
     				<PanelBody>
@@ -60,8 +65,15 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
   							onChange = { alert_type => { setAttributes( { alert_type } ) } }
     					/>
     				</PanelBody>
+    				<CheckboxControl 
+    					heading="Please select if the notice should be dismissible."
+    					label="Dismissible notice?"
+    					help="Show an 'x' and allow users to close this alert."
+    					checked={ dismiss }
+    					onChange={ dismiss => { setAttributes( { dismiss } ) } }
+    				/>
     			</InspectorControls>,
-	   			<div className = { "alert alert-" + alert_type }>
+	   			<div className = { "alert alert-" + alert_type } role="alert">
 	   			<RichText 
 	   					tagName = "p"
 	   					className = "content"
@@ -70,15 +82,16 @@ registerBlockType ( 'simple-bootstrap-alerts-for-gutenberg/alert-boxes', {
 	   					placeholder = 'Add text...'
 	   					format="string"
 	   				/>
+	   				{ dismiss === true ? <span className="close" aria-hidden="true" >&times;</span> : null }
 	   				</div>
     		]);
         },
-
         save: props => {
-        	const { attributes: { alert_type, content } } = props;
+        	const { attributes: { alert_type, content, dismiss } } = props;
        		return (
-       			<div className={ "alert alert-" + alert_type }>
-       			<RichText.Content tagname="p" value={content} />
+       			<div className={ "alert alert-" + alert_type } role="alert">
+       				<RichText.Content tagname="p" value={content} />
+       				{ dismiss === true ? <button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> : null }
 	   			</div>
        		);
         },
