@@ -1,4 +1,4 @@
-=== Simple Bootstrap Alerts For Gutenberg ===
+=== Simple Alert Blocks ===
 Contributors: andrewza
 Tags: block, gutenberg, alert, block editor, bootstrap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4GC4JEZH7KSKL
@@ -9,10 +9,10 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Bootstrap alert notices for WordPress block editor.
+Simple alert notices for the new WordPress block editor.
 
 == Description ==
-Easily add unlimited Bootstrap alert boxes for the new WordPress block editor. This includes dismissible alert notices. 
+Easily add unlimited alert boxes for the new WordPress block editor. This includes dismissible alert notices. 
 
 This plugin works only in the Gutenberg/Block editor. Please use WordPress 5.0 and above or the Gutenberg plugin for pre 5.0 WordPress installations.
 
