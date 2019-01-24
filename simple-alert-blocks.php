@@ -1,28 +1,28 @@
 <?php
 /**
- * Plugin Name: Simple Alerts For Gutenberg
- * Description: Gutenberg block for simple alert boxes.
+ * Plugin Name: Simple Alert Blocks
+ * Description: Create a simple alert notice in the new Block Editor.
  * Author: Andrew Lima
  * Author URI: https://andrewlima.co.za
  * Version: 1.0
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: simple-bootstrap-alerts-for-gutenberg
+ * Text Domain: simple-alert-blocks
  * Network: false
  *
  *
- * Simple Alerts For Gutenberg For Gutenberg is free software: you can redistribute it and/or modify
+ * Simple Alert Blocks For Gutenberg is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * Simple Alerts For Gutenberg For Gutenberg is distributed in the hope that it will be useful,
+ * Simple Alert Blocks For Gutenberg is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Simple Alerts For Gutenberg For Gutenberg. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
+ * along with Simple Alert Blocks For Gutenberg. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
 defined( 'ABSPATH' ) || exit;
