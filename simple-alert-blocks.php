@@ -4,7 +4,7 @@
  * Description: Create a simple alert notice in the new Block Editor.
  * Author: Andrew Lima
  * Author URI: https://andrewlima.co.za
- * Version: 1.0
+ * Version: 1.1
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: simple-alert-blocks
@@ -36,7 +36,8 @@ function safgb_register_files_for_gutenberg() {
 
   wp_register_script(
     'safgb-hide-alert-js',
-    plugins_url( 'js/hide-alert.js', __FILE__ )
+    plugins_url( 'js/hide-alert.js', __FILE__ ),
+    array( 'jquery' )
   );
 
     wp_register_style(
