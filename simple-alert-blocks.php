@@ -30,15 +30,15 @@ defined( 'ABSPATH' ) || exit;
 function safgb_register_files_for_gutenberg() {
     wp_register_script(
         'safgb-gutenberg-js',
-        plugins_url( 'js/gutenberg.build.js', __FILE__ ),
+        plugins_url( 'build/index.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element', 'wp-editor' )
     );
 
-  wp_register_script(
-    'safgb-hide-alert-js',
-    plugins_url( 'js/hide-alert.js', __FILE__ ),
-    array( 'jquery' )
-  );
+    wp_register_script(
+      'safgb-hide-alert-js',
+      plugins_url( 'build/hide-alert.js', __FILE__ ),
+      array( 'jquery' )
+    );
 
     wp_register_style(
       'safgb-gutenberg-css',
@@ -49,8 +49,16 @@ function safgb_register_files_for_gutenberg() {
 
     register_block_type( 'simple-alerts-for-gutenberg/alert-boxes', array(
         'editor_script' => 'safgb-gutenberg-js',
-        'style' => 'safgb-gutenberg-css',
-        'script' => 'safgb-hide-alert-js'
+        'editor_style' => 'safgb-gutenberg-css'
     ) );
 }
 add_action( 'init', 'safgb_register_files_for_gutenberg' );
+
+/** Enqueue Script and Style if the post has a block only. */
+function safgb_enqueue_styles_scripts() {
+  if ( has_block( 'simple-alerts-for-gutenberg/alert-boxes' ) ) {
+    wp_enqueue_style( 'safgb-gutenberg-css' );
+    wp_enqueue_script( 'safgb-hide-alert-js' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'safgb_enqueue_styles_scripts' );

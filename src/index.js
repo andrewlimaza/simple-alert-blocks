@@ -65,13 +65,16 @@ registerBlockType ( 'simple-alerts-for-gutenberg/alert-boxes', {
   							onChange = { alert_type => { setAttributes( { alert_type } ) } }
     					/>
     				</PanelBody>
-    				<CheckboxControl 
-    					heading="Please select if the notice should be dismissible."
-    					label="Dismissible notice?"
-    					help="Show an 'x' and allow users to close this alert."
-    					checked={ dismiss }
-    					onChange={ dismiss => { setAttributes( { dismiss } ) } }
-    				/>
+					<PanelBody>
+						<CheckboxControl 
+							heading="Please select if the notice should be dismissible."
+							label="Dismissible notice?"
+							help="Show an 'x' and allow users to close this alert."
+							checked={ dismiss }
+							onChange={ dismiss => { setAttributes( { dismiss } ) } }
+						/>
+					</PanelBody>
+    				
     			</InspectorControls>,
 	   			<div className = { "alert alert-" + alert_type } role="alert">
 	   			<RichText 

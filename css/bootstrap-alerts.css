@@ -26,6 +26,10 @@
   color: inherit;
 }
 
+.close:not(.toggle) {
+  background:none;
+}
+
 .alert-primary {
   color: #004085;
   background-color: #cce5ff;
@@ -173,4 +177,9 @@ button.close:active {
   color:inherit;
   background:none;
 }
+
+/** Editor CSS **/
+.block-editor .alert .close{ margin-top:-10% !important; }
+
+  
 
