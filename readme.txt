@@ -3,9 +3,9 @@ Contributors: andrewza
 Tags: block, gutenberg, alert, block editor, bootstrap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4GC4JEZH7KSKL
 Requires at least: 5.0
-Tested up to: 5.0.3
+Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag: trunk
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,8 @@ If you are using a version before 5.0, please install the Gutenberg plugin.
 No this only works with WordPress new block editor.
 
 == Changelog ==
+= 1.1 =
+* ENHANCEMENT: Improved file structure and prefixed components with sab (Simple Alert Blocks).
 = 1.0 =
 Initial release.
 

@@ -158,6 +158,10 @@ registerBlockType('simple-alerts-for-gutenberg/alert-boxes', {
     }
   },
   edit: function edit(props) {
+    var hideAlert = function hideAlert() {
+      return hideAlert();
+    };
+
     var _props$attributes = props.attributes,
         alert_type = _props$attributes.alert_type,
         content = _props$attributes.content,
@@ -183,7 +187,7 @@ registerBlockType('simple-alerts-for-gutenberg/alert-boxes', {
         });
       }
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: "alert alert-" + alert_type,
+      className: "sab-alert sab-alert-" + alert_type,
       role: "alert"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
       tagName: "p",
@@ -197,7 +201,7 @@ registerBlockType('simple-alerts-for-gutenberg/alert-boxes', {
       placeholder: "Add text...",
       format: "string"
     }), dismiss === true ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
-      className: "close",
+      className: "close-admin",
       "aria-hidden": "true"
     }, "\xD7") : null)];
   },
@@ -207,7 +211,7 @@ registerBlockType('simple-alerts-for-gutenberg/alert-boxes', {
         content = _props$attributes2.content,
         dismiss = _props$attributes2.dismiss;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: "alert alert-" + alert_type,
+      className: "sab-alert sab-alert-" + alert_type,
       role: "alert"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
       tagname: "p",
@@ -226,13 +230,13 @@ registerBlockType('simple-alerts-for-gutenberg/alert-boxes', {
 /***/ }),
 
 /***/ "@wordpress/element":
-/*!******************************************!*\
-  !*** external {"this":["wp","element"]} ***!
-  \******************************************/
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["wp"]["element"]; }());
+(function() { module.exports = window["wp"]["element"]; }());
 
 /***/ })
 

@@ -54,6 +54,7 @@ registerBlockType ( 'simple-alerts-for-gutenberg/alert-boxes', {
 		},
 
         edit: props => {
+			const hideAlert = () => hideAlert();
         	const { attributes: { alert_type, content, dismiss }, setAttributes } = props;
     		return ([
     			<InspectorControls>
@@ -76,7 +77,7 @@ registerBlockType ( 'simple-alerts-for-gutenberg/alert-boxes', {
 					</PanelBody>
     				
     			</InspectorControls>,
-	   			<div className = { "alert alert-" + alert_type } role="alert">
+	   			<div className = { "sab-alert sab-alert-" + alert_type } role="alert">
 	   			<RichText 
 	   					tagName = "p"
 	   					className = "content"
@@ -85,18 +86,22 @@ registerBlockType ( 'simple-alerts-for-gutenberg/alert-boxes', {
 	   					placeholder = 'Add text...'
 	   					format="string"
 	   				/>
-	   				{ dismiss === true ? <span className="close" aria-hidden="true" >&times;</span> : null }
+	   				{ dismiss === true ? <span className="close-admin" aria-hidden="true">&times;</span> : null }
 	   				</div>
     		]);
         },
         save: props => {
         	const { attributes: { alert_type, content, dismiss } } = props;
-       		return (
-       			<div className={ "alert alert-" + alert_type } role="alert">
+       		return (  
+       			<div className={ "sab-alert sab-alert-" + alert_type } role="alert">
        				<RichText.Content tagname="p" value={content} />
        				{ dismiss === true ? <button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> : null }
 	   			</div>
-       		);
-        },
-	}
+			   );
+
+			
+		}
+	},
+
 );
+
