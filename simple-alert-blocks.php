@@ -4,7 +4,7 @@
  * Description: Create a simple alert notice in the new Block Editor.
  * Author: Andrew Lima
  * Author URI: https://andrewlima.co.za
- * Version: 1.1
+ * Version: 1.3
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: simple-alert-blocks
